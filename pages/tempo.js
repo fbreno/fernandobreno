@@ -12,12 +12,17 @@ function Tempo(props){
 
 }
 
-const staticDate = new Date();
-const staticdateString = staticDate.toGMTString();
-return{
-    props:{
-        staticdateString
-    }}
+export async function getStaticProps(){
+    const staticDate = new Date();
+    const staticdateString = staticDate.toGMTString();
+
+    return{
+        props:{
+            staticdateString
+        },
+        revalidate:1
+    }
+}
 
 
     export default Tempo;
